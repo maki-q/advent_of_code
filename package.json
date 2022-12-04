@@ -1,11 +1,12 @@
 {
   "name": "advent_of_code",
   "version": "1.0.0",
-  "description": "",
+  "description": "2022 Advent of Code",
   "main": "index.js",
-  "scripts": {
+  "scripts" : {
     "setup": "node setup.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "input":"node -r dotenv/config $INIT_CWD/setup.js",
+    "start":"node -r dotenv/config $INIT_CWD"
   },
   "repository": {
     "type": "git",
@@ -19,11 +20,15 @@
   },
   "homepage": "https://github.com/maki-q/advent_of_code#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "jsdom": "^20.0.3",
     "node": "^19.2.0",
+    "node-fetch": "^3.3.0",
     "typescript": "^4.9.3"
   },
   "devDependencies": {
     "@types/node": "^18.11.10",
-    "fs-extra": "^11.1.0"
+    "fs-extra": "^11.1.0",
+    "kleur": "^4.1.5"
   }
 }

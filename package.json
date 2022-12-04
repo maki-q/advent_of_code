@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/maki-q/advent_of_code.git"
   },
+  "type": "module",
   "author": "Quinton Maki",
   "license": "MIT",
   "bugs": {

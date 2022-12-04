@@ -1,9 +1,10 @@
-const fs = require('fs/promises');
-const path = require('path')
+import * as url from 'url';
+import { parseData } from '../inputReader.js'
 
 async function solution() {
-    let calorieData, currentCalories = 0;
+    const calorieData = parseData(url.fileURLToPath(new URL('.', import.meta.url))).split('\n')
     const top3 = [0, 0, 0];
+    let currentCalories = 0;
 
     function calculateTop3(newContender) {
         if(newContender <= top3[2]) return;
@@ -18,13 +19,6 @@ async function solution() {
             [top3[0], top3[1]] = [top3[1], top3[0]];
          }
     }
-
-    try {
-        const data = await fs.readFile(path.join(__dirname, "/input.txt"), { encoding: 'utf8' });
-        calorieData = data.split('\n')
-      } catch (err) {
-        console.error("There was an issue parsing the file:", err);
-      }
 
       calorieData.forEach((individualMeal) => {
         if(individualMeal) {

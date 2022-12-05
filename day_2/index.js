@@ -55,7 +55,7 @@ const matchupPoints = {
   },
 }
 
-async function solution() {
+function solution() {
     const data = parseData(url.fileURLToPath(new URL('.', import.meta.url))).split('\n')
 
     let totalPoints = 0;

@@ -1,5 +1,5 @@
 import * as url from 'url';
-import { parseData } from '../inputReader.js'
+import { parseData } from '../utils.js'
 
 
 // Swap opbjects for part 1/part 2

@@ -1,5 +1,5 @@
 import * as url from 'url';
-import { parseData } from '../inputReader.js'
+import { parseData } from '../utils.js'
 
 async function solution() {
     const calorieData = parseData(url.fileURLToPath(new URL('.', import.meta.url))).split('\n')

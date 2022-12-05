@@ -2,7 +2,7 @@ import * as url from 'url';
 import { parseData, submitAnswer } from '../utils.js'
 import { sendSolution } from '../api.js'
 
-async function solution() {
+function solutionA() {
     const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
     const data = parseData(__dirname).split('\n')
 
@@ -10,4 +10,12 @@ async function solution() {
     //submitAnswer(__dirname, 1, data)
 }
 
-solution()
+function solutionB() {
+    const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
+    const data = parseData(__dirname).split('\n')
+
+    console.log(data)
+    //submitAnswer(__dirname, 2, data)
+}
+
+solutionA()

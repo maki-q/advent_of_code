@@ -8,8 +8,8 @@ function setupFileStructure() {
   const sourceFolder = "day_template"
   const outputFolder = "day_"
 
-  for(let i = 4; i < 32; i++) {
-    fs.copySync(path.join(__dirname, sourceFolder), path.join(__dirname, outputFolder + i), { overwrite: true})
+  for(let i = 1; i < 32; i++) {
+    fs.copySync(path.join(__dirname, sourceFolder), path.join(__dirname, outputFolder + i), { overwrite: false})
   }
 
 }

@@ -1,7 +1,7 @@
 import * as url from 'url';
 import { parseData } from '../utils.js'
 
-async function solution() {
+function solution() {
     const calorieData = parseData(url.fileURLToPath(new URL('.', import.meta.url))).split('\n')
     const top3 = [0, 0, 0];
     let currentCalories = 0;

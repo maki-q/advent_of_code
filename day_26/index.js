@@ -1,11 +1,13 @@
 import * as url from 'url';
-import { parseData } from '../inputReader.js'
+import { parseData, submitAnswer } from '../utils.js'
 import { sendSolution } from '../api.js'
 
 async function solution() {
-    const data = parseData(url.fileURLToPath(new URL('.', import.meta.url))).split('\n')
+    const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
+    const data = parseData(__dirname).split('\n')
 
     console.log(data)
+    //submitAnswer(__dirname, 1, data)
 }
 
 solution()

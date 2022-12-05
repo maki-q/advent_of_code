@@ -1,6 +1,5 @@
-import * as url from 'url';
-import { parseData } from '../utils.js'
-
+import * as url from "url";
+import { parseData } from "../utils.js";
 
 // Swap opbjects for part 1/part 2
 /*
@@ -17,8 +16,8 @@ type OpponentChoices = "A" | "B" | "C";
 const responsePoints = {
   X: 0, //Loss
   Y: 3, //Draw
-  Z: 6  //Win
-}
+  Z: 6, //Win
+};
 
 /*
 const matchupPoints = {
@@ -56,19 +55,22 @@ const matchupPoints = {
     B: 3,
     C: 1,
   },
-}
+};
 
 function solution() {
-    const data = parseData(url.fileURLToPath(new URL('.', import.meta.url))).split('\n')
+  const data = parseData(
+    url.fileURLToPath(new URL(".", import.meta.url))
+  ).split("\n");
 
-    let totalPoints = 0;
+  let totalPoints = 0;
 
-    data.forEach((matchup: string) => {
-      totalPoints += responsePoints[matchup[2] as PlayerChoices] +
-                     matchupPoints[matchup[2] as PlayerChoices][matchup[0] as OpponentChoices]
-    })
+  data.forEach((matchup: string) => {
+    totalPoints +=
+      responsePoints[matchup[2] as PlayerChoices] +
+      matchupPoints[matchup[2] as PlayerChoices][matchup[0] as OpponentChoices];
+  });
 
-    console.log(totalPoints)
+  console.log(totalPoints);
 }
 
-solution()
+solution();

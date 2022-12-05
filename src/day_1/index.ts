@@ -1,37 +1,40 @@
-import * as url from 'url';
-import { parseData } from '../utils.js'
+import * as url from "url";
+import { parseData } from "../utils.js";
 
 function solution() {
-    const calorieData = parseData(url.fileURLToPath(new URL('.', import.meta.url))).split('\n')
-    const top3 = [0, 0, 0];
-    let currentCalories = 0;
+  const calorieData = parseData(
+    url.fileURLToPath(new URL(".", import.meta.url))
+  ).split("\n");
 
-    function calculateTop3(newContender: number) {
-        if(newContender <= top3[2]) return;
+  const top3 = [0, 0, 0];
+  let currentCalories = 0;
 
-        top3[2] = newContender;
+  function calculateTop3(newContender: number) {
+    if (newContender <= top3[2]) return;
 
-        if(top3[2] > top3[1]) {
-           [top3[1], top3[2]] = [top3[2], top3[1]];
-        }
+    top3[2] = newContender;
 
-        if(top3[1] > top3[0]) {
-            [top3[0], top3[1]] = [top3[1], top3[0]];
-         }
+    if (top3[2] > top3[1]) {
+      [top3[1], top3[2]] = [top3[2], top3[1]];
     }
 
-      calorieData.forEach((individualMeal) => {
-        if(individualMeal) {
-            currentCalories += Number(individualMeal);
-        } else {
-            calculateTop3(currentCalories);
-            currentCalories = 0;
-        }
-      })
+    if (top3[1] > top3[0]) {
+      [top3[0], top3[1]] = [top3[1], top3[0]];
+    }
+  }
 
-      calculateTop3(currentCalories)
+  calorieData.forEach((individualMeal) => {
+    if (individualMeal) {
+      currentCalories += Number(individualMeal);
+    } else {
+      calculateTop3(currentCalories);
+      currentCalories = 0;
+    }
+  });
 
-      console.log(top3.reduce((total, winners) => winners + total, 0))
+  calculateTop3(currentCalories);
+
+  console.log(top3.reduce((total, winners) => winners + total, 0));
 }
 
-solution()
+solution();

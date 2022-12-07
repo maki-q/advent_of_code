@@ -8,7 +8,7 @@ function setupFileStructure() {
   const sourceFolder = "day_template";
   const outputFolder = "day_";
 
-  for (let i = 0; i < 26; i++) {
+  for (let i = 1; i < 26; i++) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     fs.copySync(
       path.join(__dirname, "src", sourceFolder),

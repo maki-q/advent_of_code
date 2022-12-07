@@ -1,6 +1,5 @@
 import * as url from "url";
 import { parseData, submitAnswer } from "../utils.js";
-import { sendSolution } from "../api.js";
 
 function solutionA() {
   const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
